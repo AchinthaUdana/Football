@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Universe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 50px;
+        }
+        
+        .content {
+            max-width: 1200px;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease 0.3s;
+        }
+        
+        .animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Section 1 - Hero */
+        #hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        
+        #hero .ball {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('https://cdn-icons-png.flaticon.com/512/53/53283.png') no-repeat center/contain;
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        
+        /* Section 2 - History */
+        #history {
+            background-color: #1a1a1a;
+        }
+        
+        .timeline {
+            position: absolute;
+            height: 100%;
+            width: 5px;
+            background: linear-gradient(to bottom, #ff0000, #ff9900);
+            left: 10%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        /* Section 3 - Legends */
+        #legends {
+            background-color: #0d0d0d;
+        }
+        
+        .player-cards {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .player-card {
+            background: #252525;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+        }
+        
+        .player-card:nth-child(1) { transition-delay: 0.1s; }
+        .player-card:nth-child(2) { transition-delay: 0.3s; }
+        .player-card:nth-child(3) { transition-delay: 0.5s; }
+        
+        /* Section 4 - Modern Game */
+        #modern {
+            background-color: #1a1a1a;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat {
+            background: #252525;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.5s ease;
+        }
+        
+        .stat h3 {
+            font-size: 3rem;
+            color: #ff9900;
+            margin-bottom: 10px;
+        }
+        
+        /* Section 5 - Future */
+        #future {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .future-ball {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: url('https://cdn-icons-png.flaticon.com/512/53/53283.png') no-repeat center/contain;
+            filter: drop-shadow(0 0 20px #00ffff);
+            opacity: 0;
+            transition: all 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Section 1: Hero -->
+    <section id="hero">
+        <div class="content">
+            <h1>FOOTBALL UNIVERSE</h1>
+            <p>The beautiful game that unites the world. Scroll to explore the past, present, and future of football.</p>
+        </div>
+        <div class="ball"></div>
+    </section>
+    
+    <!-- Section 2: History -->
+    <section id="history">
+        <div class="timeline"></div>
+        <div class="content">
+            <h1>HISTORY OF THE GAME</h1>
+            <p>From its origins in medieval England to the global phenomenon it is today, football has evolved through centuries of passion and competition.</p>
+        </div>
+    </section>
+    
+    <!-- Section 3: Legends -->
+    <section id="legends">
+        <div class="content">
+            <h1>LEGENDS OF THE PITCH</h1>
+            <p>The players who defined generations and left an indelible mark on the sport we love.</p>
+            
+            <div class="player-cards">
+                <div class="player-card">
+                    <h3>Pelé</h3>
+                    <p>The Brazilian magician who won three World Cups and scored over 1,000 career goals.</p>
+                </div>
+                <div class="player-card">
+                    <h3>Maradona</h3>
+                    <p>The Argentine genius whose "Hand of God" and "Goal of the Century" defined the 1986 World Cup.</p>
+                </div>
+                <div class="player-card">
+                    <h3>Messi</h3>
+                    <p>The modern maestro whose technical brilliance and consistency have redefined excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 4: Modern Game -->
+    <section id="modern">
+        <div class="content">
+            <h1>MODERN FOOTBALL</h1>
+            <p>Today's game is faster, more tactical, and more global than ever before.</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <h3>3.5B+</h3>
+                    <p>Fans worldwide</p>
+                </div>
+                <div class="stat">
+                    <h3>$60B</h3>
+                    <p>Annual industry value</p>
+                </div>
+                <div class="stat">
+                    <h3>211</h3>
+                    <p>National federations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 5: Future -->
+    <section id="future">
+        <div class="content">
+            <h1>THE FUTURE OF FOOTBALL</h1>
+            <p>As technology advances and the world changes, football continues to evolve while maintaining its essence.</p>
+        </div>
+        <div class="future-ball"></div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const balls = document.querySelectorAll('.ball, .future-ball');
+            const timeline = document.querySelector('.timeline');
+            const playerCards = document.querySelectorAll('.player-card');
+            const stats = document.querySelectorAll('.stat');
+            
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const section = entry.target;
+                        
+                        // Animate headings and paragraphs
+                        const h1 = section.querySelector('h1');
+                        const p = section.querySelector('p');
+                        
+                        if (h1) h1.classList.add('animate');
+                        if (p) p.classList.add('animate');
+                        
+                        // Section-specific animations
+                        if (section.id === 'hero') {
+                            const ball = section.querySelector('.ball');
+                            ball.style.opacity = '1';
+                            ball.style.transform = 'translate(50vw, 30vh) rotate(360deg)';
+                        }
+                        
+                        if (section.id === 'history') {
+                            timeline.style.opacity = '1';
+                        }
+                        
+                        if (section.id === 'legends') {
+                            playerCards.forEach(card => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            });
+                        }
+                        
+                        if (section.id === 'modern') {
+                            stats.forEach(stat => {
+                                stat.style.opacity = '1';
+                                stat.style.transform = 'scale(1)';
+                            });
+                        }
+                        
+                        if (section.id === 'future') {
+                            const futureBall = section.querySelector('.future-ball');
+                            futureBall.style.opacity = '1';
+                            futureBall.style.transform = 'translate(-50px, -100px)';
+                            
+                            // Floating animation
+                            setInterval(() => {
+                                futureBall.style.transform = `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)`;
+                            }, 2000);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Ball follow animation for hero section
+            document.addEventListener('mousemove', (e) => {
+                const heroBall = document.querySelector('#hero .ball');
+                if (heroBall && heroBall.style.opacity === '1') {
+                    const x = e.clientX / window.innerWidth * 100;
+                    const y = e.clientY / window.innerHeight * 100;
+                    heroBall.style.transform = `translate(${x}vw, ${y}vh) rotate(${x * 3.6}deg)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
